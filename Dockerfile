@@ -3,6 +3,7 @@ FROM adoptopenjdk:8-jdk-hotspot
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt -y install git maven nano nodejs \ 
     && rm -rf /var/lib/apt/lists/* \
+    && npm install percli -g \
     && sed -i 's|</settings>|<localRepository>/peregrine/.m2/repository</localRepository></settings>|' /etc/maven/settings.xml
 
 RUN mkdir -p /opt/scripts
