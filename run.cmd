@@ -1,1 +1,1 @@
-docker run -it -p 8080:8080 -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
+docker run -it -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
