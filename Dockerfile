@@ -9,6 +9,9 @@ RUN mkdir -p /opt/scripts
 COPY scripts/* /opt/scripts/
 RUN chmod a+x /opt/scripts/*.sh
 
+COPY motd /etc/motd
+RUN echo '[ ! -z "$TERM" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc 
+
 ENV PATH=/opt/scripts:${PATH}
 
 WORKDIR /peregrine
