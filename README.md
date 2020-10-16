@@ -21,13 +21,13 @@ then run the docker image:
 - windows: 
 
 ```
-docker run -it -p 8080:8080 -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
+docker run -it -p 8088:8088 -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
 ```
 
 - other platforms
 
 ```
-docker run -it -p 8080:8080 -v $(PWD):/peregrine peregrinecms/peregrine-toolbox
+docker run -it -p 8088:8088 -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
 ```
 
 you should get a shell 
@@ -45,7 +45,7 @@ _note 1_: start-peregrine.sh is run with &, hit enter to get another command pro
 
 _note 2_: the process takes a while :-( but at least this is only happening the first time
 
-After the install is complete you can go to http://localhost:8080/ and log in with admin/admin to access the instance
+After the install is complete you can go to http://localhost:8088/ and log in with admin/admin to access the instance
 
 If you exit out of the shell peregrine is stopped
 
@@ -54,7 +54,7 @@ If you exit out of the shell peregrine is stopped
 To run peregrine again just go the folder you created in the beginning and execute
 
 ```
-docker run -it -p 8080:8080 -v $(PWD):/peregrine peregrinecms/peregrine-toolbox
+docker run -it -p 8088:8088 -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
 ```
 
 in the resulting shell you can then run
@@ -63,6 +63,6 @@ in the resulting shell you can then run
 start-peregrine.sh
 ```
 
-to startup peregrine again and open your browser at http://localhost:8080/
+to startup peregrine again and open your browser at http://localhost:8088/
 
 
