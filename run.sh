@@ -1,1 +1,3 @@
-docker run -it -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
+#!/bin/bash
+
+docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
