@@ -16,6 +16,4 @@ ENV PATH=/opt/scripts:${PATH}
 
 WORKDIR /peregrine
 
-EXPOSE 8088 
-
 ENTRYPOINT ["bash"]

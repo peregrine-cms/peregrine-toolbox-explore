@@ -1,1 +1,1 @@
-docker run -it -p 8088:8088 -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
+docker run -it -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
