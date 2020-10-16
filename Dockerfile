@@ -7,9 +7,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 
 RUN mkdir -p /opt/scripts
 COPY scripts/* /opt/scripts/
-RUN chmod a+x /opt/scripts/*.sh
+RUN chmod a+x /opt/scripts/*
 
-COPY motd /etc/motd
+COPY overlay/etc/motd /etc/
 RUN echo '[ ! -z "$TERM" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc 
 
 ENV PATH=/opt/scripts:${PATH}

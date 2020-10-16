@@ -35,7 +35,7 @@ you should get a shell
 to setup a development environment for peregrine execute the following commands: 
 
 ```
-clone.sh
+clone
 develop-next.sh
 start-peregrine.sh
 build-all.sh
