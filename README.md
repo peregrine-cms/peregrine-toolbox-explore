@@ -20,7 +20,7 @@ Peregrine Toolbox has the following benefits:
 
 3. Create an empty folder somewhere on your computer and change your directory into it.
    This directory will be used to store the source code for Peregrine CMS. The Peregrine
-   Toolbox will write to this folder. This directory functions a shared file system
+   Toolbox will write to this folder. This directory functions as a shared file system
    between the Peregrine Toolbox container and your host operating system. This is what
    allows you to edit the project source code using your favorite IDE.
     
@@ -39,7 +39,7 @@ Peregrine Toolbox has the following benefits:
         $ docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
 
 5. At this point, you should be in the Peregrine Toolbox shell. Now, clone the Peregrine
-   projects, but running:
+   projects, by running:
 
         $ clone
         
@@ -53,7 +53,7 @@ Peregrine Toolbox has the following benefits:
 
 2. Start Peregrine CMS
 
-        $ docker run --name peregrine-cms -it --rm -p 8080:8080  
+        $ docker run --name peregrine-cms -it --rm -p 8080:8080 peregrinecms/peregrine-cms:develop-sling12 
 
 3. Open a browser and visit http://localhost:8080. Log in with `admin` / `admin`.
 
