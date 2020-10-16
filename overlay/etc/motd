@@ -14,7 +14,7 @@ to get started for the first time.
 2. In another terminal, start Peregrine.
 
    $ docker pull peregrinecms/peregrine-cms:develop-sling12
-   $ docker run --name peregrine-cms -it --rm -p 8080:8080
+   $ docker run --name peregrine-cms -it --rm -p 8080:8080 peregrinecms/peregrine-cms:develop-sling12
 
 3. In this shell, run 'build'.
 
