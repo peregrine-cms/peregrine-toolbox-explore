@@ -36,7 +36,6 @@ to setup a development environment for peregrine execute the following commands:
 
 ```
 clone
-develop-next.sh
 start-peregrine.sh
 build-all.sh
 ```
