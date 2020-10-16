@@ -1,61 +1,69 @@
-peregrine cms developer toolbox
-----
+# Peregrine CMS Developer Toolbox
 
-in case you want to work on peregrine but only have docker (desktop) installed on your computer (no java, maven)
+The Peregrine CMS Developer Toolbox (Peregrine Toolbox) is intended for developers who do 
+not have a full development toolchain installed on their local machines or do not want a 
+full toolchain installed. In general, the toolchain for Peregrine CMS consists of Java, 
+Maven and Node.
 
-## install the first time
+Peregrine Toolbox has the following benefits:
+1. It contains the full development tools with the correct versions
+2. Avoid installing additional software on your host system
+3. Use your preferred IDEs to write code
 
-```
-docker pull peregrinecms/peregrine-toolbox
-```
+## Install Peregrine Toolbox
 
-create an emppty folder somewhere on your computer and change your directory into it
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
-```
-mkdir peregrine
-cd peregrine
-```
+2. Pull the Peregrine Toolbox Docker image.
 
-then run the docker image: 
+        $ docker pull peregrinecms/peregrine-toolbox
 
-- windows: 
+3. Create an empty folder somewhere on your computer and change your directory into it.
+   This directory will be used to store the source code for Peregrine CMS. The Peregrine
+   Toolbox will write to this folder. This directory functions a shared file system
+   between the Peregrine Toolbox container and your host operating system. This is what
+   allows you to edit the project source code using your favorite IDE.
+    
+        $ mkdir peregrine
+        $ cd peregrine
 
-```
-docker run -it -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
-```
+4. Run the Peregrine Toolbox. This will give you a shell with all the tools needed to 
+   start developing for Peregrine CMS.
 
-- other platforms
+   **Windows:**
+   
+        > docker run --name peregrine-toolbox --network host -it --rm -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
 
-```
-docker run -it -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
-```
+   **Linux and OS X**
 
-you should get a shell 
+        $ docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
 
-to setup a development environment for peregrine execute the following commands: 
+5. At this point, you should be in the Peregrine Toolbox shell. Now, clone the Peregrine
+   projects, but running:
 
-```
-clone
-start-peregrine.sh
-build-all.sh
-```
+        $ clone
+        
+   This will take some time, but it's only required once.
+   
+ ## Install Peregrine CMS
 
-_note 1_: start-peregrine.sh is run with &, hit enter to get another command prompt to execute the build-all.sh file
+1. Open a terminal window and pull the Peregrine CMS Docker image.
 
-_note 2_: the process takes a while :-( but at least this is only happening the first time
+        $ docker pull peregrinecms/peregrine-cms:develop-sling12 
 
-If you exit out of the shell peregrine is stopped
+2. Start Peregrine CMS
 
-## run peregrine at a later point
+        $ docker run --name peregrine-cms -it --rm -p 8080:8080  
 
-To run peregrine again just go the folder you created in the beginning and execute
+3. Open a browser and visit http://localhost:8080. Log in with `admin` / `admin`.
 
-```
-docker run -it -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
-```
+Congratulations, you have a full Peregrine development system running. Let's use the
+Toolbox to deploy the code.
 
-in the resulting shell you can then run
+## Deploy code to Peregrine
 
-```
-start-peregrine.sh
-```
+1. Go back to the terminal which is running the Toolbox shell.
+
+2. Run a build.
+
+        $ build

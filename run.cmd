@@ -1,1 +1,1 @@
-docker run -it -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
+docker run --name peregrine-toolbox --network host -it --rm -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox

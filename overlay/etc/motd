@@ -9,4 +9,13 @@
 Welcome to Peregrine CMS Toolbox. Run the following commands
 to get started for the first time.
 
-$ clone
+1. In this shell, run 'clone' to clone the project.
+
+2. In another terminal, start Peregrine.
+
+   $ docker pull peregrinecms/peregrine-cms:develop-sling12
+   $ docker run --name peregrine-cms -it --rm -p 8080:8080
+
+3. In this shell, run 'build'.
+
+4. Visit http://localhost:8080 (admin/admin)
