@@ -9,7 +9,6 @@ git clone --depth 1 https://github.com/headwirecom/peregrine-cms.git && \
   git remote set-branches origin 'develop-sling12' && \
   git fetch --depth 1 origin develop-sling12 && \
   git checkout ${PEREGRINE_BRANCH} && \
-  git log --name-status HEAD^..HEAD
 cd ..
 
 git clone https://github.com/headwirecom/themeclean-flex.git && \

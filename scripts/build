@@ -1,6 +1,6 @@
 echo ==== building peregrine =============================
 
-if [ ! -d /peregine/peregrine-cms ]; then
+if [ ! -d /peregrine/peregrine-cms ]; then
   echo "Please run 'clone'. Peregrine Git projects do not exist." 
   exit 1
 else
@@ -8,7 +8,7 @@ else
   mvn clean install -PautoInstallPackage
 fi
 
-if [ ! -d /peregine/themeclean-flex-cms ]; then
+if [ ! -d /peregrine/themeclean-flex-cms ]; then
   echo "Please run 'clone'. Peregrine Git projects do not exist." 
   exit 1
 else
