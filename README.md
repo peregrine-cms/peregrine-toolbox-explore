@@ -50,7 +50,7 @@ In this section, we'll pull another Docker image from DockerHub. This image prov
 fully configured Peregrine instance. If you're an advanced user of Peregrine and already
 have Peregrine CMS installed, you can skip this section.
 
-1. Start Peregrine CMS as a Docker container. 
+1. Open another terminal and start Peregrine CMS as a Docker container. 
 
         $ docker run --name peregrine-cms -it --rm -p 8080:8080 peregrinecms/peregrine-cms:develop-sling12 
 
