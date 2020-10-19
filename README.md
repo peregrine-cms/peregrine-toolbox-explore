@@ -20,7 +20,7 @@ the interactive shell that the Peregrine Toolbox provides.
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
-2. Create an empty folder somewhere on your computer and change your directory into it.
+2. Create an empty folder somewhere on your computer and change into it.
    This directory will be used to store the source code for Peregrine CMS. 
     
         $ mkdir peregrine
@@ -31,11 +31,11 @@ the interactive shell that the Peregrine Toolbox provides.
 
    **Windows:**
    
-        > docker run --name peregrine-toolbox --network host -it --rm -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
+        > docker run --name peregrine-toolbox --network host -it --rm -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox:develop-sling12
 
    **Linux and OS X**
 
-        $ docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
+        $ docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox:develop-sling12
 
 4. At this point, you should be in the Peregrine Toolbox shell. Now, clone the Peregrine
    projects, by running:
@@ -44,7 +44,7 @@ the interactive shell that the Peregrine Toolbox provides.
         
    This will take some time, but it's only required once.
    
-## Install Peregrine CMS with Docker
+## Install Peregrine CMS
 
 In this section, we'll pull another Docker image from DockerHub. This image provides a
 fully configured Peregrine instance. If you're an advanced user of Peregrine and already
