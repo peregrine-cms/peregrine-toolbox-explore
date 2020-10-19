@@ -12,6 +12,7 @@ RUN chmod a+x /opt/scripts/*
 
 COPY overlay/etc/motd /etc/
 RUN echo '[ ! -z "$TERM" -a -r /etc/motd ] && cat /etc/motd' >> /etc/bash.bashrc 
+RUN echo 'percli check | grep -v "checking all"' >> /etc/bash.bashrc 
 
 ENV PATH=/opt/scripts:${PATH}
 

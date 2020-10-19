@@ -6,9 +6,9 @@ full toolchain installed. In general, the toolchain for Peregrine CMS consists o
 Maven and Node.
 
 Peregrine Toolbox has the following benefits:
-1. It contains the full development tools with the correct versions
-2. Avoid installing additional software on your host system
-3. Use your preferred IDEs to write code
+1. Contains full set of development tools for building Peregrine
+2. Avoids the installation of dev tools on your host system
+3. Allows you to use your preferred IDE 
 
 ## Install Peregrine Toolbox
 
