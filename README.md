@@ -20,17 +20,13 @@ the interactive shell that the Peregrine Toolbox provides.
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
-2. Pull the Peregrine Toolbox Docker image.
-
-        $ docker pull peregrinecms/peregrine-toolbox
-
-3. Create an empty folder somewhere on your computer and change your directory into it.
+2. Create an empty folder somewhere on your computer and change your directory into it.
    This directory will be used to store the source code for Peregrine CMS. 
     
         $ mkdir peregrine
         $ cd peregrine
 
-4. Run the Peregrine Toolbox. This will give you a shell with all the tools needed to 
+3. Run the Peregrine Toolbox. This will give you a shell with all the tools needed to 
    start developing for Peregrine CMS.
 
    **Windows:**
@@ -41,24 +37,24 @@ the interactive shell that the Peregrine Toolbox provides.
 
         $ docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox
 
-5. At this point, you should be in the Peregrine Toolbox shell. Now, clone the Peregrine
+4. At this point, you should be in the Peregrine Toolbox shell. Now, clone the Peregrine
    projects, by running:
 
         $ clone
         
    This will take some time, but it's only required once.
    
- ## Install Peregrine CMS
+## Install Peregrine CMS with Docker
 
-1. Open a terminal window and pull the Peregrine CMS Docker image.
+In this section, we'll pull another Docker image from DockerHub. This image provides a
+fully configured Peregrine instance. If you're an advanced user of Peregrine and already
+have Peregrine CMS installed, you can skip this section.
 
-        $ docker pull peregrinecms/peregrine-cms:develop-sling12 
-
-2. Start Peregrine CMS
+1. Start Peregrine CMS as a Docker container. 
 
         $ docker run --name peregrine-cms -it --rm -p 8080:8080 peregrinecms/peregrine-cms:develop-sling12 
 
-3. Open a browser and visit http://localhost:8080. Log in with `admin` / `admin`.
+2. Open a browser and visit http://localhost:8080. Log in with `admin` / `admin`.
 
 Congratulations, you have a full Peregrine development system running. Let's use the
 Toolbox to deploy the code.
