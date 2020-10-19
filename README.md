@@ -10,6 +10,12 @@ Peregrine Toolbox has the following benefits:
 2. Avoids the installation of dev tools on your host system
 3. Allows you to use your preferred IDE 
 
+Peregrine Toolbox achieves the goals above by packaging all development tools
+on a Docker image. Once started, the Docker container writes all source code
+projects to a directory on your host system. This allows you to use any IDE or
+editor on your system. When you are ready to build, simply run the build using 
+the interactive shell that the Peregrine Toolbox provides.
+
 ## Install Peregrine Toolbox
 
 1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
@@ -19,10 +25,7 @@ Peregrine Toolbox has the following benefits:
         $ docker pull peregrinecms/peregrine-toolbox
 
 3. Create an empty folder somewhere on your computer and change your directory into it.
-   This directory will be used to store the source code for Peregrine CMS. The Peregrine
-   Toolbox will write to this folder. This directory functions as a shared file system
-   between the Peregrine Toolbox container and your host operating system. This is what
-   allows you to edit the project source code using your favorite IDE.
+   This directory will be used to store the source code for Peregrine CMS. 
     
         $ mkdir peregrine
         $ cd peregrine
