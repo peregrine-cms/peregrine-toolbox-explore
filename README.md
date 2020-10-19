@@ -1,68 +1,68 @@
-peregrine cms developer toolbox
-----
+# Peregrine CMS Developer Toolbox
 
-in case you want to work on peregrine but only have docker (desktop) installed on your computer (no java, maven)
+The Peregrine CMS Developer Toolbox (Peregrine Toolbox) is intended for developers who do 
+not have a full development toolchain installed on their local machines or do not want a 
+full toolchain installed. In general, the toolchain for Peregrine CMS consists of Java, 
+Maven and Node.
 
-## install the first time
+Peregrine Toolbox has the following benefits:
+1. Contains full set of development tools for building Peregrine
+2. Avoids the installation of dev tools on your host system
+3. Allows you to use your preferred IDE 
 
-```
-docker pull peregrinecms/peregrine-toolbox
-```
+Peregrine Toolbox achieves the goals above by packaging all development tools
+on a Docker image. Once started, the Docker container writes all source code
+projects to a directory on your host system. This allows you to use any IDE or
+editor on your system. When you are ready to build, simply run the build using 
+the interactive shell that the Peregrine Toolbox provides.
 
-create an emppty folder somewhere on your computer and change your directory into it
+## Install Peregrine Toolbox
 
-```
-mkdir peregrine
-cd peregrine
-```
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
-then run the docker image: 
+2. Create an empty folder somewhere on your computer and change into it.
+   This directory will be used to store the source code for Peregrine CMS. 
+    
+        $ mkdir peregrine
+        $ cd peregrine
 
-- windows: 
+3. Run the Peregrine Toolbox. This will give you a shell with all the tools needed to 
+   start developing for Peregrine CMS.
 
-```
-docker run -it -p 8080:8080 -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox
-```
+   **Windows:**
+   
+        > docker run --name peregrine-toolbox --network host -it --rm -v "%CD%:/peregrine" peregrinecms/peregrine-toolbox:develop-sling12
 
-- other platforms
+   **Linux and OS X**
 
-```
-docker run -it -p 8080:8080 -v $(PWD):/peregrine peregrinecms/peregrine-toolbox
-```
+        $ docker run --name peregrine-toolbox --network host -it --rm -v $(pwd):/peregrine peregrinecms/peregrine-toolbox:develop-sling12
 
-you should get a shell 
+4. At this point, you should be in the Peregrine Toolbox shell. Now, clone the Peregrine
+   projects, by running:
 
-to setup a development environment for peregrine execute the following commands: 
+        $ clone
+        
+   This will take some time, but it's only required once.
+   
+## Install Peregrine CMS
 
-```
-clone.sh
-develop-next.sh
-start-peregrine.sh
-build-all.sh
-```
+In this section, we'll pull another Docker image from DockerHub. This image provides a
+fully configured Peregrine instance. If you're an advanced user of Peregrine and already
+have Peregrine CMS installed, you can skip this section.
 
-_note 1_: start-peregrine.sh is run with &, hit enter to get another command prompt to execute the build-all.sh file
+1. Open another terminal and start Peregrine CMS as a Docker container. 
 
-_note 2_: the process takes a while :-( but at least this is only happening the first time
+        $ docker run --name peregrine-cms -it --rm -p 8080:8080 peregrinecms/peregrine-cms:develop-sling12 
 
-After the install is complete you can go to http://localhost:8080/ and log in with admin/admin to access the instance
+2. Open a browser and visit http://localhost:8080. Log in with `admin` / `admin`.
 
-If you exit out of the shell peregrine is stopped
+Congratulations, you have a full Peregrine development system running. Let's use the
+Toolbox to deploy the code.
 
-## run peregrine at a later point
+## Deploy code to Peregrine
 
-To run peregrine again just go the folder you created in the beginning and execute
+1. Go back to the terminal which is running the Toolbox shell.
 
-```
-docker run -it -p 8080:8080 -v $(PWD):/peregrine peregrinecms/peregrine-toolbox
-```
+2. Run a build.
 
-in the resulting shell you can then run
-
-```
-start-peregrine.sh
-```
-
-to startup peregrine again and open your browser at http://localhost:8080/
-
-
+        $ build
